@@ -1,0 +1,25 @@
+{
+  "name": "fin-canvas",
+  "version": "0.0.1",
+  "authors": [
+    "stevewirts <anonymous@example.com>"
+  ],
+  "description": "Element providing solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer"
+  ],
+  "main": "fin-canvas.html",
+  "license": "MIT",
+  "homepage": "https://github.com/stevewirts/fin-canvas/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "polymer": "Polymer/polymer#master",
+    "fin-rectangle": "#master"
+  }
+}

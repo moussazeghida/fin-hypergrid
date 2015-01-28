@@ -1,0 +1,45 @@
+<!--
+
+The `fin-hypergrid-column-sorting` element is a custom Polymer web component that serves as the base "class" or API for the grid features (controllers).
+
+@group OpenFin hypergrid
+@element fin-hypergrid-column-sorting
+@homepage http://github.com/openfin/fin-hypergrid
+-->
+
+<polymer-element name="fin-hypergrid-feature-column-sorting" extends="fin-hypergrid-feature-base">
+  <template></template>
+  <script>
+
+
+(function() {
+
+'use strict';
+
+    Polymer({ /* jshint ignore:line */
+
+        handleTap: function(grid, event) {
+            var gridCell = event.gridCell;
+            if (gridCell.y < grid.getFixedRowCount()) {
+                grid.fixedRowClicked(event);
+            } else if (gridCell.x < grid.getFixedColumnCount()) {
+                grid.fixedColumnClicked(event);
+            }
+        },
+        handleMouseMove: function(grid, event) {
+            if (this.isFixedRow(grid, event) && !this.isFixedColumn(grid, event)) {
+                this.cursor = 'pointer';
+            } else {
+                this.cursor = null;
+            }
+            if (this.next) {
+                this.next.handleMouseMove(grid, event);
+            }
+        }
+
+    });
+
+})(); /* jshint ignore:line */
+
+  </script>
+</polymer-element>
